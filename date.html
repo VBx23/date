@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asking for a Date</title>
+    <link rel="stylesheet" href="date.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hey there!</h1>
+        <p>I'd love to spend some time with you. Would you like to go on a date?</p>
+        <input type="date" id="dateInput" class="date-input">
+        <button onclick="submitDate()">Confirm Date</button>
+        <p id="response" class="response"></p>
+    </div>
+
+    <script>
+        function submitDate() {
+            const dateInput = document.getElementById("dateInput").value;
+            const response = document.getElementById("response");
+
+            if (dateInput) {
+                response.textContent = `Great! See you on ${new Date(dateInput).toDateString()}!`;
+            } else {
+                response.textContent = "Please choose a date first!";
+            }
+        }
+    </script>
+</body>
+</html>
